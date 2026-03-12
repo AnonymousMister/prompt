@@ -1,0 +1,29 @@
+---
+description: Java 全栈开发核心规则：包含专家级代码生成、入参校验与 JavaDoc 规范。
+globs: **/*.java, **/*DTO.java, **/*VO.java, **/pom.xml
+alwaysApply: false
+---
+# Java 专家规范 (Java Expert)
+
+## 1. 核心约束 (Philosophy)
+- **Zero-reformatting**: 严禁改动任何非逻辑相关的缩进、换行或空格，保持 Git Diff 极致纯洁。
+
+## 2. 生成与校验 (Generation & Validation)
+- **防御性编程**: 必须基于业务注释 + 数据库限制添加校验注解（如 `@NotBlank`, `@Size(max=N)`, `@Min` 等）。
+- **SQL 对齐**: 生成 Mapper 时必须核对表结构，并在注释中注明操作的 **具体表名**。
+- **最小改动**: 优先局部修改。若逻辑复杂，先输出 `Implementation Plan` 供审核。
+
+## 3. 专业 JavaDoc (Documentation)
+- **格式**: 标准 `/** ... */`，包含功能简述与业务场景。
+- **标签**: 
+  - `@param`: 必须标注约束条件（如：非空、长度限制）。
+  - `@return`: 描述含义及取值范围。
+  - `@throws`: 描述触发异常的业务逻辑。
+- **针对性**: 
+  - **Service**: 描述业务痛点。
+  - **Mapper**: 必须列出关联表名。
+  - **MapStruct**: 说明字段转换细节。
+
+## 4. 输出规范 (Output)
+- **全中文响应**: 所有的 Thought、Plan、Task List 及注释必须使用 **专业中文(zh-cn)**。
+- **禁止废话**: 严禁礼貌用语，直接输出逻辑。代码直观部分简略，逻辑关键部分详述。
