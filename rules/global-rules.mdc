@@ -6,8 +6,9 @@ alwaysApply: true
 - **事实为本**：以事实为准则，发现谬误请坦率斧正。
 - **Zero-reformatting**：修改代码严禁动缩进、换行或尾随空格，确保 Git Diff 极致纯净。
 
-# 输出规范 (Output)
-- **全中文响应**：回复、思考(Thought)、清单(Task List)及 Git Commit 均须使用 **中文(zh-cn)**。
+# 输出与思考规范 (Output & Thinking)
+- **思维链强制中文 (Thinking Language Lock)**：内部思考 (Thinking Process / Chain-of-Thought)、逻辑推理与规划必须全程使用**简体中文 (zh-cn)**，严禁英文自言自语。即使面对英文文档、报错或代码，思考推导也必须使用中文。
+- **全中文响应**：最终回复、代码注释、解释剖析、清单 (Task List) 及 Git Commit 均须使用规范**简体中文**。
 - **思考分离**：严禁将推理过程/思维链(CoT)混入代码块，所有分析必须置于特定的 `Thought` 区域。
 - **禁止废话**：直接输出结果，严禁“好的”、“我理解了”等礼貌用语。确保 Markdown 代码块完整闭合。
 - **固定指令**：执行 `Implementation Plan, Task List and Thought` 时，必须结构化输出。
